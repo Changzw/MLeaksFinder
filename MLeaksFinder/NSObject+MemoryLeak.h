@@ -15,6 +15,7 @@
 #define MLCheck(TARGET) [self willReleaseObject:(TARGET) relationship:@#TARGET];
 
 @interface NSObject (MemoryLeak)
+@property (nonatomic, strong) NSString *extraInfo;
 
 - (BOOL)willDealloc;
 - (void)willReleaseObject:(id)object relationship:(NSString *)relationship;
