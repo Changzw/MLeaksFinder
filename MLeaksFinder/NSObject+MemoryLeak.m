@@ -89,7 +89,7 @@ static const void *const kExtraInfo = &kExtraInfo;
   for (id child in children) {
     NSString *className = NSStringFromClass([child class]);
     if (self.extraInfo.length > 0) {
-      className = [className stringByAppendingFormat:@":%@", self.extraInfo];
+      className = [className stringByAppendingFormat:@"-parentInfo:%@", self.extraInfo];
     }
     [child setViewStack:[viewStack arrayByAddingObject:className]];
     [child setParentPtrs:[parentPtrs setByAddingObject:@((uintptr_t)child)]];
